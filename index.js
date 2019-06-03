@@ -5,6 +5,7 @@ const api = axios.create({
 
 main();
 
+
 function main () {
     const address = 'C3qXd3YYRBrZZod5D9GLGhpDNnVfAwpbe2';
     const amount = 1;
@@ -13,10 +14,19 @@ function main () {
         address, 
         amount
     }).then(res => {
-        console.log(res.data);
+        console.log(res.data.tx_ref);
+        unitTest(res.data.tx_ref);
     }).catch(err => {
         console.log(err.response.data.error);
     });
+}
+
+function unitTest(test){
+    if(test != undefined){
+        console.log("Funcionou");
+    }else{
+        console.log("Não funcionou");
+    }
 }
 
 
