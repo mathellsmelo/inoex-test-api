@@ -1,0 +1,14 @@
+{
+  "name": "inoex-node",
+  "version": "1.0.0",
+  "description": "api de enviar de bcy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matheus Melo",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.0"
+  }
+}
