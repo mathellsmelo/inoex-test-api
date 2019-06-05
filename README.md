@@ -2,8 +2,6 @@
 
 **************** RUBY ******************
 
-Após clonar o repositório executar o comando "gem install" dentro da pasta para instalar os packages necessários.
-
 Para rodar o método execute o comando "ruby inoex.rb" e "ruby inoex_test.rb" para fazer o teste unitário 
 
 **************** NODE ******************
