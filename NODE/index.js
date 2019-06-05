@@ -5,7 +5,6 @@ const api = axios.create({
 
 main();
 
-
 function main () {
     const address = 'C3qXd3YYRBrZZod5D9GLGhpDNnVfAwpbe2';
     const amount = 1;
@@ -14,19 +13,24 @@ function main () {
         address, 
         amount
     }).then(res => {
-        console.log(res.data.tx_ref);
-        unitTest(res.data.tx_ref);
+        //console.log(res.data.tx_ref);
+        get(res.data.tx_ref);
     }).catch(err => {
         console.log(err.response.data.error);
     });
 }
 
-function unitTest(test){
-    if(test != undefined){
-        console.log("Funcionou");
-    }else{
-        console.log("Não funcionou");
-    }
+function get(tx){
+    api.get(`/txs/${tx}`).then(res => {
+        //console.log(res.data.hash);
+        if(tx === res.data.hash){
+            console.log("Success");
+        }else {
+            console.log("Failed");
+        }
+    }).catch(err => {
+        console.log(err);
+    });
 }
 
 
